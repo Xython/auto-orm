@@ -19,6 +19,6 @@ Spirit^ with ^Site {
 res = parse(test_code)
 
 check_parsing_complete(test_code, res.tokens, res.state)
-with open('test_orm.py', 'w') as f:
+with open('generated.py', 'w') as f:
     f.write(code_gen(res.result))
 

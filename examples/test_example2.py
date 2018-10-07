@@ -1,6 +1,5 @@
-from test_orm import *
+from example2 import *
 from random import random
-from pprint import pprint
 
 s1 = Spirit(name='威严满满')
 s2 = Spirit(name='稳重成熟')

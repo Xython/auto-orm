@@ -1,12 +1,11 @@
 engine {
     url = "sqlite:///:memory:"
-    url = "mysql+pymysql://root:12345@localhost/test?charset=utf8"
+    # url = "mysql+pymysql://root:12345@localhost/test?charset=utf8"
     # other key-value pairs for configurations are welcome
 }
 
 python
     print('start engine')
-
 
 User{
     a: Integer = (1 + 2),
