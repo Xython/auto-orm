@@ -1,10 +1,4 @@
-engine {
-     url = "sqlite:///:memory:"
-}
-
+engine { url = "sqlite:///:memory:" }
 Spirit { name: String(30) }
 Site   {}
-
-Spirit^ with ^Site {
-    score: Float
-}
+Spirit^ with ^Site { score: Float }

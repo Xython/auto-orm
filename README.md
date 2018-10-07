@@ -63,9 +63,7 @@ engine {
 - 默认值
 
 ```
-MyType {
-   value: Integer = 42
-}
+MyType { value: Integer = 42 }
 ```
 
 - Python representation
@@ -74,7 +72,6 @@ MyType {
 
 ```
 MyType{
-
    value1: Integer = 42,
    value2: String(30),
    value3: String(40)
@@ -111,10 +108,7 @@ python
         ironpython = 2
         jython = 3
 
-MyType{
-    v1 : enum MyEnum,
-    v2 : DateTime
-}
+MyType{ v1 : enum MyEnum, v2 : DateTime }
 ```
 效果如下:
 
@@ -131,19 +125,11 @@ print(obj)
 
 - 定义关系
 ```
+Person { name: String(20) }
 
-Person {
- name: String(20)
+Cost { amount: Float }
 
-}
-
-Cost {
-  amount: Float
-}
-
-Person with Cost {
-    time: DateTime
-}
+Person with Cost { time: DateTime }
 ```
 
 效果:
@@ -193,19 +179,11 @@ auto-orm用所有权来描述伪删除的依赖关系, 所有对象的激活状�
 下面我们看一个例子:
 ```
 
-Person {
- name: String(20)
+Person { name: String(20) }
 
-}
+Cost { amount: Float }
 
-Cost {
-  amount: Float
-}
-
-Person^ with Cost {
-    time: DateTime
-}
-
+Person^ with Cost { time: DateTime }
 ```
 
 上述dbg代码表示Person对于Cost有所有权. `^`表示具有所有权的一方.
@@ -281,9 +259,7 @@ print(Cost.query.filter(Cost.dbg_is_status_activated == 1).all())
 Spirit { name: str }
 Site   {}
 
-Spirit^ with ^Site {
-    time: DateTime
-}
+Spirit^ with ^Site { time: DateTime }
 ```
 
 然后我们用`dbg gen -i test.dbg -o my_generated_module.py`生成python模块, 来描述上述问题:

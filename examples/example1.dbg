@@ -7,27 +7,14 @@ engine {
 python
     print('start engine')
 
-User{
-    a: Integer = (1 + 2),
-    b: Integer = (2 + 3)
-}
+User{ a: Integer = (1 + 2), b: Integer = (2 + 3) }
 
-Card{
-    content: String(30)!
-}
+Card{ content: String(30)! }
 
-Spot{
-    name: String(30)
-}
+Spot{ name: String(30) }
 
-User^ with ^Card {
-    content: String(30)
-}
+User^ with ^Card { content: String(30) }
 
-User with ^Spot {
-   item: Text
-}
+User with ^Spot { item: Text }
 
-Card^ with Spot {
-   info: Text
-}
+Card^ with Spot { info: Text }
