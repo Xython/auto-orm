@@ -1,0 +1,34 @@
+engine {
+    url = "sqlite:///:memory:"
+    url = "mysql+pymysql://root:12345@localhost/test?charset=utf8"
+    # other key-value pairs for configurations are welcome
+}
+
+python
+    print('start engine')
+
+
+User{
+    a: Integer = (1 + 2),
+    b: Integer = (2 + 3)
+}
+
+Card{
+    content: String(30)!
+}
+
+Spot{
+    name: String(30)
+}
+
+User^ with ^Card {
+    content: String(30)
+}
+
+User with ^Spot {
+   item: Text
+}
+
+Card^ with Spot {
+   info: Text
+}
